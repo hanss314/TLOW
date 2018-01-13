@@ -9,7 +9,3 @@ function atbash(letter) {
 	}
 }
 
-console.log(atbash('a'))
-console.log(atbash('B'))
-console.log(atbash('1'))
-console.log(atbash(';'))
