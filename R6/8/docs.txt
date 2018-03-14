@@ -1,0 +1,115 @@
+Smokestacks: documentation
+This is just a really quick and dirty stack language, hence smokestacks. It would be a lot nicer to read if I got more than 10 lines.
+
+Variables: Technically any string or number or even any other datatype (if you can get it) can act as a variable. Special variables to note:
+*: the code pointer. To perform control flow e.g. code jumps, modify this value. Don't use this variable otherwise! This is now intentionally difficult to directly modify, although you still technically can do it. Use j/J instead.
+
+Unless otherwise stated, the elements in the stack are consumed.
+Let the top element in the stack be X, and the second topmost element in the stack be Y.
+
+[arith] ARITHMETIC
+
+a: Addition: push X+Y (if X,Y are ints, addition; if X,Y are strings, concatenation)
+s: Subtraction: push X-Y
+m: Multiplication: push X*Y
+d: Division: push X/Y (integer division)
+n: Negate: push -X
+r: Remainder (mod): push X%Y
+p: Power: push X^Y
+e: Equal: push 1 if X=Y, otherwise 0
+l: unequaL: push 1 if X!=Y, otherwise 0
+g: Greater: push 1 if X>Y, otherwise 0
+f: Fewer: push 1 if X<Y, otherwise 0
+0-9: Combine 0-9: push 10*X+n, where n is the digit. Useful for multi-digit input.
+
+[logic] LOGICAL
+
+t: noT: push 1 if X=0, otherwise 1
+c: Complement: push bitwise complement of X
+x: bitwise Xor: push bitwise-xor of X and Y
+b: Bitwise and: push bitwise-and of X and Y
+w: bitWise or: push bitwise-or of X and Y
+
+[stack] STACK MANIPULATION
+
+C: Copy: push X twice.
+D: Delete: pop X.
+W: sWap: push X, then push Y.
+Z: Zero: clears the entire stack
+
+[str] STRINGS
+
+O: Order: push the character number of X
+u: Unicode: push the character with Unicode value X
+T: Take: push the Xth character in string Y
+
+[const] CONSTANTS
+
+z: Zero: push 0
+y: Yes (one): push 1
+E: Empty string: push ""
+M: Maxnum: push 2^64-1 (it's also not really the maximum number)
+
+[ctrl] CONTROL FLOW
+
+j: Jump-a (absolute): Set the code pointer to a certain value X.
+J: Jump-r (relative): Add the value X to the code pointer.
+F: iF jump-r (relative): If the value X is nonzero, add the value Y to the code pointer.
+G: if Goto (i.e. jump-a): If the value X is nonzero, set the code pointer to value Y
+
+[var] VARIABLE MANIPULATION
+
+L: Load: Load the variable X with value Y
+U: Unload: push the value in variable X
+Y: copY: Set the variable X to match the contents of variable Y
+A: Add-to: Add the value in variable X by Y
+
+[io] INPUT/OUTPUT
+
+i: Input: requests user input; pushes whatever the user inputs to the stack
+o: Output: print X in the stack
+I: Integer: push the next code character as an integer; ignore the next character in code
+S: String: push the next code character as a string; ignore the next character in code
+B: Builder: Append the next code character as a string; ignore the next character in code
+
+[magic] MAGIC
+
+Q: Quine1: push the entire code (post minification)
+q: Quine2 (pre): push the entire code (pre minification)
+H: Hello world: push "Hello world!"
+
+[debug] DEBUGGING/OTHER
+
+K: stacK: push the stack as a string
+k: Kill: end the program prematurely
+V: Vardump: push the variable dictionary
+h: Help: print the mini-helpstring for command X.
+N: No op: does literally nothing
+
+[prog] PROGRAM MANIPULATION
+
+P: Polymorph (reflection): changes codepoint X to character Y. Possibly dangerous.
+v: View (introspection): push character in codepoint X
+X: eXec: execute X as a subroutine. Note on exec: variables are global and are passed between function frames; the stack is not.
+R: Run variable: execute the string located at variable x. This is a good way to define and run functions.
+
+Hello World program:
+I33uI32uSHBeBlBlBoaBwBoBrBlBdao
+Cheat version: Ho
+
+As you can see, while the language spec only allows for alphanumeric characters, you can still print out non-alphanumeric characters.
+
+Quine:
+Qo
+
+Quines are very easy to write in this language. It's almost as featureful as HQ9++ (99 bottles of beer on the wall and accumulator not included)
+
+Example Fibonacci program:
+I0SaLI1SbLSaUSbUCCoSaLaSbLI9j
+
+I0SaLI1SbL	a=0;b=1
+SaUSbUCC	stack = [a,b,b,b]
+oSaLaSbL	print(b);a=b;b=a+b
+I9j		jump to 9
+
+WARNING: Infinite loop.

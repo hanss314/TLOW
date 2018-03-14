@@ -1,0 +1,88 @@
+This is TLOWScript
+# to initialize variable x and set it to zero
+var x
+
+This is TLOWScript
+# to increment x
+inc x
+
+This is TLOWScript
+# to decrement x
+dec x
+
+This is TLOWScript
+# to print x as a number
+prn x
+
+This is TLOWScript
+# to print x as a character
+prc x
+
+This is TLOWScript
+# to jump to lab l if variable a is greater than b
+jgt a b l
+lab l
+
+This is TLOWScript
+# to copy a into x
+var x
+lab 0
+inc x
+jgt a x 0
+
+This is TLOWScript
+# to add a and b into x
+var x
+var i
+lab 0
+inc x
+inc i
+jgt a i 0
+var i
+lab 1
+inc x
+inc i
+jgt b i 1
+
+This is TLOWScript
+# to subtract b from a into x
+var x
+var i
+lab 0
+inc x
+inc i
+jgt a i 0
+var i
+lab 1
+dec x
+inc i
+jgt b i 1
+
+This is TLOWScript
+# to multiply a and b into x
+var x
+var j
+lab 0
+var i
+lab 1
+inc x
+inc i
+jgt a i 1
+inc j
+jgt b j 0
+
+This is TLOWScript
+# to divide a over b into x
+var x
+var j
+var z
+lab 0
+var i
+lab 1
+inc j
+inc i
+jgt j a 2
+jgt b i 1
+inc x
+jgt a j 0
+lab 2
