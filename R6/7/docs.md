@@ -1,44 +1,48 @@
 # TLOWScript
-Well, this is essentially a dummed-down version of assembly.
+This language is centered around a single (limited) bank of registers and then
+a few single-character commands which somehow manages to form a turing-complete
+language that matches hanss' spec. ¯\\\_(ツ)\_/¯
 
-Each instruction is on a new line and is formed by a command character
-and then space seperated arguments to be passed to that command.
+The registers is an array of integers with no limit to size meaning that you
+can make any integer you want if you try hard enough. The currently used
+register is stored in a "pointer" that can be incremented or decremented at
+will.
 
-Following are the commands and their arguments:
+## Syntax
+Well, every file must start with `This is TLOWScript`, but after that each
+command is as follows:
 
-|Command|Name |Argument 1  |Argument 2 (Optional)|
-|-------|-----|------------|---------------------|
-|s      |Store|Register    |Integral data        |
-|c      |Copy |Source reg  |Location reg         |
-|a      |Add  |Location reg|Source reg           |
-|t      |Sub  |Location reg|Source reg           |
-|d      |Div  |Location reg|Source reg           |
-|m      |Mult |Location reg|Source reg           |
-|p      |Print|Register    |                     |
-|o      |Outp |Verbatim    |                     |
-|j      |Jmp  |Line #      |                     |
-|j      |JmpIf|Register    |Line #               |
+|Command|What it actually does                                       |
+|-------|------------------------------------------------------------|
+|i      |Increment the current register by 1                         |
+|s      |Decrement the current registrt by 1                         |
+|f      |Increment the pointer by 1                                  |
+|b      |Decrement the pointer by 1                                  |
+|p      |Print the ASCII representation of the current register      |
+|o      |Print the current register as an integer string             |
+|m      |Set a marker to jump to                                     |
+|j      |Jump to the most recent marker if the current register is >0|
 
-## Example
-The following code will print `Hello world` 5 times:
+## Examples
+What documentation would be complete without examples? The following outputs
+`Hello World!\n` to the console.
+
 ```
-This is TLOWScript
-s foo 5
-s bar 1
-o Hello world
-t foo bar
-j foo 3
-```
-
-The following code will print the fibonachi sequence:
-```
-This is TLOWScript
-s foo 0
-s bar 1
-a foo bar
-p bar
-a bar foo
-p foo
-j 4
+This is TLOWScriptiiiiiiiimfiiiimfiifiiifiiifibbbbsjfififsffimbjbsjffpfssspiiiiiiippiiipffpbspbpiiipsssssspsssssssspffipfiip
 ```
 
+Right. You though that was bad? Due to the magical nature of only parsing
+alphanum characters, that is functionally equivilant to the following:
+
+```
+This is TLOWScriptii$%iii"iiimfiiii^$Wmfiifiiifii£"ifibb^$£bbsj'fifi'#fsff.imb,jb.sjf.f,p.fsss"pii\\iiii£$ipp%i£iip"£ffp$£bs$pbpi$%iips£$"sssssp$%£sss^%ss[]sssp[[[ffipfiip
+```
+
+But to top it all off, that can be written as the following and still be
+functionally equivilant:
+
+```
+This is TLOWScriptii$%iii"iiigamfkxgiiii^$Wmfiiafduicxzkiifii£"zifgibb^$£bkbsj'fifi'#fsfgf.imb,jb.sjgf.fxz,p.fsss"kpii\\xzgiiizi£$ipzaup%i£igip"£ffp$£kbsg$pbpi$%iuipgs£$"sssxxssap$%£sszs^%ss[]sssp[[[ffxipafiipgkkk
+```
+
+And, of course, you can just keep going. Thank me later.

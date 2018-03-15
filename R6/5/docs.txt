@@ -1,0 +1,20 @@
+Opcodes: 
+[0-9]: Push number to the stack
+a    : Pop top 2 numbers from stack, add them together, push result to stack
+d    : Pop top 2 numbers from stack, divide first number by second, push result to stack
+k    : Pop top 2 numbers from stack, if the second number is greater then 0, jump (first number) instructions backwards
+m    : Pop top 2 numbers from stack, multiply them together, push result to stack
+p    : Pop number from stack, print its value
+q    : Pop number from stack, print its corresponding character value (chr)
+s    : Pop top 2 numbers from stack, subtract first number from second, push result to stack
+x    : Pop top 2 numbers from stack, stores the second number into the local variable denoted by the integer value of the first
+y    : Pop number from stack, gets its corresponding local variable value
+
+
+Examples:
+
+Hello, World!
+This is TLOWScript89mq554mm1aq349mmq349mmq99m65maq67m2aq48mq99m6aq99m65maq99m48m1aaq34m9mq25m25mmq48m1aq
+
+Infinite Counter
+This is TLOWScript01a0x0y0y0yp72mk
