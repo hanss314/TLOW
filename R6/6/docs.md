@@ -2,11 +2,11 @@
 
 ## Program Description
 
-This is a TLOWScript interpreter, where the code is just Python scripting converted from ascii into hexadecimal.
+This is a TLOWScript interpreter, where the code is just Python scripts converted from ascii into hexadecimal.
 
 ## Generating TLOWScript
 
-Generating TLOWScript code is simple. All you have to do is call the `toHex` function with a `b"binary string"`, then print the output. For example, here's how to generate the included TLOWScript code:
+Generating TLOWScript code is simple. All you have to do is call the `toHex` function with a `b"binary string"`, then print the output. Here's an example showing many of the TLOWScript features:
 
 ```py
 hex = toHex(b"""import math
@@ -23,7 +23,7 @@ print(hex)
 
 ## Running TLOWScript
 
-Once you've got some TLOWScript generated, you'll probably want to run it. This is also as simple as calling the `tlow6` function. Here's a prettier example of the code in the submission:
+Once you've got some TLOWScript generated, you'll probably want to run it. This is as simple as calling the `tlow6` function with your code. Here's an example using the code from earlier:
 
 ```py
 tlow6("""This is TLOWScript
