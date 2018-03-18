@@ -1,0 +1,13 @@
+Tape of 9999 cells, initialized with 0, pointer starts at the 0th cell
+R - Move the pointer to the right 1
+L - Move the pointer to the left 1
+P - Print the character represented by the cell at the pointer
+N - Print the value of the cell at the pointer
+A - Add the value at the cell immediately to the left of the pointer and the cell whose index is the value of the cell at the pointer
+S - Subtract the value at the cell immediately to the left of the pointer and the cell whose index is the value of the cell at the pointer
+M - Multiply the value at the cell immediately to the left of the pointer and the cell whose index is the value of the cell at the pointer
+Q - Integer Divide the value at the cell immediately to the left of the pointer and the cell whose index is the value of the cell at the pointer
+C - Copy the value of the cell whose index is the value of the cell at the pointer to the cell at the pointer
+I - Increment the cell at the pointer
+D - Decrement the cell at the pointer
+J - Jump N instructions, where N is the value of the cell at the pointer

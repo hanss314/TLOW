@@ -1,0 +1,26 @@
+Begin your code with "This is TlowScript"
+
+Each operator or symbol is written as "TLOW[name]" for name listed below.
+plus - adds the preceding and proceeding numbers
+minus - subtracts the preceding by the proceeding number
+times - multiplies the preceding and proceeding numbers
+divide - divides the preceding by the proceeding number
+equals - sets a variable with name on left to value on right
+colon - used in fuction declaration
+open - begins a group of function parameters
+close - ends a group of function parameters
+comma - separates function parameters
+period - used in reaching properties or functions of objects
+quote - surrounds a string
+
+Declare a function with "def [function name]TLOWopen[optional parameter]TLOWcomma[optional parameter]...TLOWcloseTLOWcolon" and indent the next lines
+End a function by removing the indent
+
+Variables are declared with "[var name] TLOWequals [value]"
+Examples: 
+coolvar TLOWequals 3
+coolstring TLOWequals TLOWquotecoolTLOWquote
+coolvar2 TLOWequals 3 TLOWplus coolvar
+
+Built in functions, data types, syntax, and properties are based off of python, go check out documentation for that.
+Make sure you indent loops and code blocks!
