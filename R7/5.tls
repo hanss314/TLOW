@@ -1,0 +1,7 @@
+This is TLOWScript
+global number
+number TLOWequals 1
+while TLOWopen True TLOWclose TLOWcolon
+  number TLOWequals number TLOWplus 1
+  if all TLOWopen not number TLOWdivide x TLOWequalsTLOWequals number TLOWdivideTLOWdivide x for x in range TLOWopen 2 TLOWcomma number TLOWclose TLOWclose TLOWcolon
+    print TLOWopen number TLOWclose

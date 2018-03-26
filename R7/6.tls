@@ -1,0 +1,10 @@
+This is TLOWScript
+from math import fmod
+
+n TLOWequals 1
+while True TLOWcolon
+    n TLOWplusTLOWequals 1
+    for i in range TLOWopen 2 TLOWcomma n TLOWminus 1 TLOWclose TLOWcolon
+        if not fmod TLOWopen n TLOWcomma i TLOWclose TLOWcolon break
+    else TLOWcolon
+        print n
