@@ -1,0 +1,31 @@
+This is TLOWScript
+var z
+inc z
+inc z
+prn z
+inc z
+var 0
+lab 5
+..var b
+..inc b
+..inc b
+..lab 0
+....var x
+....var i
+....lab 2
+......inc x
+......inc i
+......jgt b x 1
+......jgt x b 1
+......var x
+......lab 1
+......jgt z i 2
+....jgt x 0 4
+....jgt z 0 3
+....lab 4
+....inc b
+....jgt z b 0
+..prn z
+..lab 3
+..inc z
+..jgt z 0 5
