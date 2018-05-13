@@ -1,0 +1,1 @@
+x,y=1,0;while 1 do x,y=y,x+y;print(x)end
